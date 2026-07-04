@@ -1,6 +1,7 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
+import Navbar from './components/Navbar'
 
 function initStarsCanvas() {
   const canvas = document.getElementById('bg-canvas')
@@ -77,7 +78,7 @@ const WelcomeScreen = ({ show, onHide }) => {
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/90 backdrop-blur-xl transition-opacity duration-700" style={{ background: "radial-gradient(circle at center, #0a0f2a, #000000)" }}>
       <div className="text-center">
         <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-blue-500 bg-clip-text text-transparent neon-glow">
-          Welcome to my Portfolio
+          Welcome to my Portofolio
         </h1>
         <div className="mt-12 text-cyan-300 text-xl flex flex-col items-center gap-2">
           <i className="fas fa-chevron-down text-3xl animate-bounce"></i>
@@ -91,7 +92,7 @@ const WelcomeScreen = ({ show, onHide }) => {
 
 const IntroSection = () => {
   return (
-    <section className="min-h-screen flex items-center px-6 md:px-12 py-20 relative z-10">
+    <section id="home" className="min-h-screen flex items-center px-6 md:px-12 py-20 relative z-10">
       <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
         <div className="fade-up space-y-6">
           <div className="relative">
@@ -105,8 +106,6 @@ const IntroSection = () => {
           </p>
           <div className="flex flex-wrap gap-3 text-sm text-cyan-300/80">
             <span><i className="fas fa-code"></i> Fullstack Development</span>
-            <span><i className="fas fa-bolt"></i> Interactive Animations</span>
-            <span><i className="fas fa-globe"></i> Futuristic UI/UX</span>
           </div>
         </div>
 
@@ -173,7 +172,7 @@ const HeroSection = () => {
 
 const AboutSection = () => {
   return (
-    <section className="py-24 px-6 md:px-12 z-10 relative">
+    <section id="about" className="py-24 px-6 md:px-12 z-10 relative">
       <div className="max-w-6xl mx-auto glass p-8 md:p-12 fade-up">
         <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
           About Me
@@ -227,60 +226,28 @@ const AboutSection = () => {
   )
 }
 
-const DashboardSection = () => {
-  const stats = [
-    { label: "Projects Completed", value: "45+", icon: "fas fa-code-branch", color: "#0ff" },
-    { label: "Years Experience", value: "4+", icon: "fas fa-calendar-alt", color: "#c084fc" },
-    { label: "Happy Clients", value: "30+", icon: "fas fa-users", color: "#3b82f6" },
-    { label: "Tech Mastered", value: "12", icon: "fas fa-microchip", color: "#f472b6" }
-  ]
-
-  return (
-    <section className="py-20 px-6 md:px-12 z-10 relative">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12 fade-up">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-            Dashboard
-          </h2>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map((stat, i) => (
-            <div key={i} className="glass p-6 text-center border border-white/20 rounded-2xl hover-scale">
-              <i className={`${stat.icon} text-4xl mb-3`} style={{ color: stat.color, textShadow: `0 0 6px ${stat.color}` }}></i>
-              <h3 className="text-3xl font-bold text-white">{stat.value}</h3>
-              <p className="text-gray-400 text-sm mt-1">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 const SkillsSection = () => {
   const skills = [
     { name: "HTML5", icon: "fab fa-html5", color: "#e34c26", level: 90 },
     { name: "JavaScript", icon: "fab fa-js", color: "#f7df1e", level: 95 },
-    { name: "React Fundamental", icon: "fab fa-react", color: "#61dafb", level: 98 },
+    { name: "React.JS", icon: "fab fa-react", color: "#61dafb", level: 98 },
     { name: "Node.js", icon: "fab fa-node-js", color: "#8bc500", level: 92 },
     { name: "PostgreSQL", icon: "fas fa-database", color: "#336791", level: 98 },
     { name: "Tailwind CSS", icon: "fas fa-wind", color: "#38bdf8", level: 94 },
     { name: "Git & GitHub", icon: "fab fa-github", color: "#333", level: 89 },
     { name: "dbever", icon: "fas fa-database", color: "#4db33d", level: 98 },
     { name: "phpmyadmin", icon: "fas fa-database", color: "#f0db4f", level: 88 },
-    { name: "React Lanjutan", icon: "fab fa-react", color: "#61dafb", level: 90 },
     { name: "MySQL", icon: "fas fa-database", color: "#4479a1", level: 90 },
     { name: "Laravel", icon: "fas fa-php", color: "#ff2d20", level: 80 },
     { name: "Express.js", icon: "fas fa-server", color: "#000000", level: 85 },
     { name: "postman", icon: "fas fa-cubes", color: "#ff6c37", level: 92 },
-    { name: "PHP", icon: "fas fa-php", color: "#777bb4", level: 85 },
     { name: " C Programming", icon: "fas fa-code", color: "#555555", level: 80 },
     { name: "Cascading Style Sheets (CSS)", icon: "fab fa-css3-alt", color: "#264de4", level: 90 },
     { name: "Next.js", icon: "fas fa-cubes", color: "#000000", level: 80 },
   ]
 
   return (
-    <section className="py-20 px-6 md:px-12 z-10 relative">
+    <section id="skills" className="py-20 px-6 md:px-12 z-10 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 fade-up">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent"> Core Skills </h2>
@@ -341,11 +308,10 @@ const ContactSection = () => {
       <div className="max-w-5xl mx-auto glass p-8 md:p-12 text-center fade-up">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Connect With <span className="text-cyan-400">Me</span></h2>
         <p className="text-gray-300 mb-10">Mari berkolaborasi untuk proyek visioner masa depan</p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
           <a href="galangponco123@gmail.com" className="flex flex-col items-center p-5 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:border-cyan-400 transition"><i className="fas fa-envelope text-3xl text-cyan-400 mb-2"></i><span>Email</span><span className="text-xs text-cyan-300">galangponco123@gmail.com</span></a>
           <a href="https://wa.me/6282170714989" target="_blank" className="flex flex-col items-center p-5 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:border-cyan-400 transition"><i className="fab fa-whatsapp text-3xl text-green-400 mb-2"></i><span>WhatsApp</span><span className="text-xs">+62 821 7071 4989</span></a>
           <a href="https://github.com/galangmaulana15" target="_blank" className="flex flex-col items-center p-5 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:border-cyan-400 transition"><i className="fab fa-github text-3xl text-gray-300 mb-2"></i><span>GitHub</span><span className="text-xs">/galangmaulana15</span></a>
-          <a href="https://instagram.com/neon_alex" target="_blank" className="flex flex-col items-center p-5 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:border-cyan-400 transition"><i className="fab fa-instagram text-3xl text-pink-400 mb-2"></i><span>Instagram</span><span className="text-xs">@neon_alex</span></a>
         </div>
       </div>
     </section>
@@ -373,13 +339,14 @@ const App = () => {
     <>
       <WelcomeScreen show={showWelcome} onHide={() => setShowWelcome(false)} />
       <div className="relative z-10">
+        <Navbar />
         <IntroSection />
         <HeroSection />
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />
-        <footer className="py-8 text-center text-white/40 text-sm border-t border-white/10">© 2026 | Futuristic Portfolio | 3D Stars Background | React + CSS Animations</footer>
+        <footer className="py-8 text-center text-white/40 text-sm border-t border-white/10">© 2026 | Futuristic Portfolio | React + CSS Animations</footer>
       </div>
     </>
   )
