@@ -122,7 +122,7 @@ const IntroSection = () => {
               <div className="relative z-10 text-center">
                 <div className="w-28 h-28 mx-auto rounded-full bg-gradient-to-tr from-cyan-500 to-purple-600 p-1 shadow-xl">
                   <div className="w-full h-full rounded-full bg-black flex items-center justify-center overflow-hidden">
-                    <img src="svg/foto.jpeg" alt="profile" className="w-full h-full object-cover" />
+                    <img src="/svg/foto.jpeg" alt="profile" className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold mt-4 text-white">Galang Ponco Maulana</h3>
@@ -206,7 +206,7 @@ const AboutSection = () => {
         .earth-spin {
           width: 220px;
           height: 220px;
-          background: url('svg/foto2.jpg') repeat-x;
+          background: url('/svg/foto2.jpg') repeat-x;
           background-size: cover;
           border-radius: 50%;
           box-shadow: 0 0 40px rgba(0, 255, 255, 0.4), inset 0 0 20px rgba(0,0,0,0.5);
