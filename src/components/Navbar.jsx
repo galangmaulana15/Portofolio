@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'Contact', href: '#contact' },
 ]
 
+
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home')
   const [menuOpen, setMenuOpen] = useState(false)

@@ -75,15 +75,21 @@ const WelcomeScreen = ({ show, onHide }) => {
   if (!show) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/90 backdrop-blur-xl transition-opacity duration-700" style={{ background: "radial-gradient(circle at center, #0a0f2a, #000000)" }}>
+    <div
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/90 backdrop-blur-xl transition-opacity duration-700"
+      style={{
+        background: 'radial-gradient(circle at center, #0a0f2a, #000000)',
+      }}
+    >
       <div className="text-center">
         <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-blue-500 bg-clip-text text-transparent neon-glow">
-          Welcome to my Portofolio
+          Welcome to my Portfolio
         </h1>
         <div className="mt-12 text-cyan-300 text-xl flex flex-col items-center gap-2">
           <i className="fas fa-chevron-down text-3xl animate-bounce"></i>
-          <span className="text-sm tracking-widest">ENTER THE DIGITAL UNIVERSE
-            SCROLL TO EXPLORE MY WORLD</span>
+          <span className="text-sm tracking-widest">
+ENTER THE DIGITAL UNIVERSE SCROLL TO EXPLORE MY WORLD
+          </span>
         </div>
       </div>
     </div>
@@ -92,27 +98,50 @@ const WelcomeScreen = ({ show, onHide }) => {
 
 const IntroSection = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center px-6 md:px-12 py-20 relative z-10">
+    <section
+      id="home"
+      className="min-h-screen flex items-center px-6 md:px-12 py-20 relative z-10"
+    >
       <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
         <div className="fade-up space-y-6">
           <div className="relative">
             <h2 className="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-cyan-300 via-purple-400 to-blue-500 bg-clip-text text-transparent">
-              FULLSTACK <br />DEVELOPER
+              FULLSTACK <br />
+              DEVELOPER
             </h2>
             <div className="absolute -left-4 top-0 w-1 h-24 bg-gradient-to-b from-cyan-400 to-purple-600 rounded-full"></div>
           </div>
           <p className="text-gray-300 text-lg md:text-xl max-w-md leading-relaxed border-l-2 border-cyan-400 pl-5">
-            Transforming ideas into immersive digital realities through modern technologies, cinematic design, and seamless user experiences.
+            Transforming ideas into immersive digital realities through modern
+            technologies, cinematic design, and seamless user experiences.
           </p>
           <div className="flex flex-wrap gap-3 text-sm text-cyan-300/80">
-            <span><i className="fas fa-code"></i> Fullstack Development</span>
+            <span>
+              <i className="fas fa-code"></i> Fullstack Development
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-5 pt-2">
+            <a
+              href="#contact"
+              className="btn-hover px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-bold shadow-lg shadow-cyan-500/30 flex items-center gap-2"
+            >
+              Hire Me <i className="fas fa-arrow-right"></i>
+            </a>
+            <a
+              href="#projects"
+              className="btn-hover px-8 py-3 rounded-full border border-cyan-400 text-cyan-300 backdrop-blur-sm hover:bg-cyan-500/20 transition"
+            >
+              View Project <i className="fas fa-code-branch ml-2"></i>
+            </a>
           </div>
         </div>
 
         <div className="flex justify-center fade-up">
           <div className="relative flex flex-col items-center">
             <div className="lanyard-swing relative w-12 h-28 flex flex-col items-center">
-              <div className="w-6 h-6 rounded-full bg-gradient-to-b from-yellow-400 to-amber-600 shadow-lg mb-1 flex items-center justify-center"><i className="fas fa-circle text-white text-xs"></i></div>
+              <div className="w-6 h-6 rounded-full bg-gradient-to-b from-yellow-400 to-amber-600 shadow-lg mb-1 flex items-center justify-center">
+                <i className="fas fa-circle text-white text-xs"></i>
+              </div>
               <div className="w-1 h-16 bg-gradient-to-b from-gray-300 to-gray-500 rounded-full"></div>
               <div className="w-8 h-4 bg-gradient-to-r from-gray-400 to-gray-600 rounded-b-md -mt-1 shadow-md"></div>
               <div className="w-4 h-5 bg-yellow-500 rounded-sm mt-1 shadow-lg"></div>
@@ -122,17 +151,36 @@ const IntroSection = () => {
               <div className="relative z-10 text-center">
                 <div className="w-28 h-28 mx-auto rounded-full bg-gradient-to-tr from-cyan-500 to-purple-600 p-1 shadow-xl">
                   <div className="w-full h-full rounded-full bg-black flex items-center justify-center overflow-hidden">
-                    <img src="/svg/foto.jpeg" alt="profile" className="w-full h-full object-cover" />
+                    <img
+                      src="/svg/foto.jpeg"
+                      alt="profile"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mt-4 text-white">Galang Ponco Maulana</h3>
-                <p className="text-cyan-300 text-sm"> Fullstack Developer & Creative UI Engineer</p>
+                <h3 className="text-2xl font-bold mt-4 text-white">
+                  Galang Ponco Maulana
+                </h3>
+                <p className="text-cyan-300 text-sm">
+                  {' '}
+                  Fullstack Developer & Creative UI Engineer
+                </p>
                 <div className="mt-3 flex justify-center gap-4 text-gray-300 text-xs">
-                  <div><i className="fas fa-map-marker-alt text-cyan-400"></i> Bandung, Indonesia</div>
-                  <div><i className="fas fa-envelope text-cyan-400"></i> galangponco123@gmail.com</div>
+                  <div>
+                    <i className="fas fa-map-marker-alt text-cyan-400"></i>{' '}
+                    Bandung, Indonesia
+                  </div>
+                  <div>
+                    <i className="fas fa-envelope text-cyan-400"></i>{' '}
+                    galangponco123@gmail.com
+                  </div>
                 </div>
                 <div className="mt-4 p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                  <p className="text-xs text-cyan-200"> Driven by passion, powered by creativity, and inspired to build the future through code.</p>
+                  <p className="text-xs text-cyan-200">
+                    {' '}
+                    Driven by passion, powered by creativity, and inspired to
+                    build the future through code.
+                  </p>
                 </div>
                 <div className="mt-4 flex justify-center gap-5 text-cyan-300/80 text-xl">
                   <i className="fab fa-react hover:text-cyan-400 transition"></i>
@@ -141,28 +189,10 @@ const IntroSection = () => {
                   <i className="fab fa-github hover:text-white transition"></i>
                 </div>
               </div>
-              <div className="absolute bottom-2 right-2 text-[8px] text-cyan-400/50">hover me</div>
+              <div className="absolute bottom-2 right-2 text-[8px] text-cyan-400/50">
+                hover me
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-const HeroSection = () => {
-  return (
-    <section className="min-h-screen flex items-center relative px-6 md:px-12 py-20 overflow-hidden z-10">
-      <div className="max-w-7xl mx-auto w-full relative">
-        <div className="fade-up space-y-6 text-center md:text-left md:max-w-3xl">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter">
-            <span className="bg-gradient-to-r from-cyan-300 via-purple-400 to-blue-500 bg-clip-text text-transparent">Galang Ponco Maulana</span>
-          </h1>
-          <p className="text-2xl md:text-3xl text-gray-300 font-mono"> Creative Frontend Developer & UI Engineer</p>
-          <p className="text-gray-400 max-w-xl text-lg">Transforming ideas into immersive digital experiences through modern technologies, cinematic interfaces, and innovative user interactions.</p>
-          <div className="flex flex-wrap gap-5 pt-4 justify-center md:justify-start">
-            <a href="#contact" className="btn-hover px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-bold shadow-lg shadow-cyan-500/30 flex items-center gap-2">Hire Me <i className="fas fa-arrow-right"></i></a>
-            <a href="#projects" className="btn-hover px-8 py-3 rounded-full border border-cyan-400 text-cyan-300 backdrop-blur-sm hover:bg-cyan-500/20 transition">View Project <i className="fas fa-code-branch ml-2"></i></a>
           </div>
         </div>
       </div>
@@ -181,17 +211,27 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-5 text-gray-300 leading-relaxed">
             <p>
-              Sebagai seorang Fullstack Developer, saya memiliki ketertarikan dalam membangun aplikasi web modern yang tidak hanya fungsional, tetapi juga memberikan pengalaman pengguna yang menarik, interaktif, dan nyaman digunakan.
+              Sebagai seorang Fullstack Developer, saya memiliki ketertarikan
+              dalam membangun aplikasi web modern yang tidak hanya fungsional,
+              tetapi juga memberikan pengalaman pengguna yang menarik,
+              interaktif, dan nyaman digunakan.
             </p>
             <p>
-              Saya berpengalaman dalam pengembangan frontend maupun backend menggunakan teknologi seperti React, Tailwind CSS, Node.js, serta pengelolaan database untuk menciptakan sistem yang responsif, efisien, dan scalable.
+              Saya berpengalaman dalam pengembangan frontend maupun backend
+              menggunakan teknologi seperti React, Tailwind CSS, Node.js, serta
+              pengelolaan database untuk menciptakan sistem yang responsif,
+              efisien, dan scalable.
             </p>
             <p>
-              Saya juga memiliki semangat tinggi untuk terus mempelajari teknologi dan framework terbaru, serta mengembangkan kemampuan dalam menciptakan solusi digital yang modern, inovatif, dan sesuai dengan perkembangan industri teknologi saat ini.
+              Saya juga memiliki semangat tinggi untuk terus mempelajari
+              teknologi dan framework terbaru, serta mengembangkan kemampuan
+              dalam menciptakan solusi digital yang modern, inovatif, dan sesuai
+              dengan perkembangan industri teknologi saat ini.
             </p>
             <div className="mt-6 p-4 rounded-2xl bg-black/40 border-l-4 border-purple-500 backdrop-blur-sm">
               <p className="italic text-cyan-200">
-                "Didorong oleh semangat, didukung oleh kreativitas, dan terinspirasi untuk membangun masa depan melalui kode."
+                "Didorong oleh semangat, didukung oleh kreativitas, dan
+                terinspirasi untuk membangun masa depan melalui kode."
               </p>
             </div>
           </div>
@@ -228,37 +268,71 @@ const AboutSection = () => {
 
 const SkillsSection = () => {
   const skills = [
-    { name: "HTML5", icon: "fab fa-html5", color: "#e34c26", level: 90 },
-    { name: "JavaScript", icon: "fab fa-js", color: "#f7df1e", level: 95 },
-    { name: "React.JS", icon: "fab fa-react", color: "#61dafb", level: 98 },
-    { name: "Node.js", icon: "fab fa-node-js", color: "#8bc500", level: 92 },
-    { name: "PostgreSQL", icon: "fas fa-database", color: "#336791", level: 98 },
-    { name: "Tailwind CSS", icon: "fas fa-wind", color: "#38bdf8", level: 94 },
-    { name: "Git & GitHub", icon: "fab fa-github", color: "#333", level: 89 },
-    { name: "dbever", icon: "fas fa-database", color: "#4db33d", level: 98 },
-    { name: "phpmyadmin", icon: "fas fa-database", color: "#f0db4f", level: 88 },
-    { name: "MySQL", icon: "fas fa-database", color: "#4479a1", level: 90 },
-    { name: "Laravel", icon: "fas fa-php", color: "#ff2d20", level: 80 },
-    { name: "Express.js", icon: "fas fa-server", color: "#000000", level: 85 },
-    { name: "postman", icon: "fas fa-cubes", color: "#ff6c37", level: 92 },
-    { name: " C Programming", icon: "fas fa-code", color: "#555555", level: 80 },
-    { name: "Cascading Style Sheets (CSS)", icon: "fab fa-css3-alt", color: "#264de4", level: 90 },
-    { name: "Next.js", icon: "fas fa-cubes", color: "#000000", level: 80 },
+    { name: 'HTML5', icon: 'fab fa-html5', color: '#e34c26', level: 90 },
+    { name: 'JavaScript', icon: 'fab fa-js', color: '#f7df1e', level: 95 },
+    { name: 'React.JS', icon: 'fab fa-react', color: '#61dafb', level: 98 },
+    { name: 'Node.js', icon: 'fab fa-node-js', color: '#8bc500', level: 92 },
+    {
+      name: 'PostgreSQL',
+      icon: 'fas fa-database',
+      color: '#336791',
+      level: 98,
+    },
+    { name: 'Tailwind CSS', icon: 'fas fa-wind', color: '#38bdf8', level: 94 },
+    { name: 'Git & GitHub', icon: 'fab fa-github', color: '#333', level: 89 },
+    {       name: 'DBeaver', icon: 'fas fa-database', color: '#4db33d', level: 98 },
+    {
+      name: 'phpmyadmin',
+      icon: 'fas fa-database',
+      color: '#f0db4f',
+      level: 88,
+    },
+    { name: 'MySQL', icon: 'fas fa-database', color: '#4479a1', level: 90 },
+    { name: 'Express.js', icon: 'fas fa-server', color: '#000000', level: 85 },
+    { name: 'postman', icon: 'fas fa-cubes', color: '#ff6c37', level: 92 },
+    {
+      name: ' C Programming',
+      icon: 'fas fa-code',
+      color: '#555555',
+      level: 80,
+    },
+    {
+      name: 'Cascading Style Sheets (CSS)',
+      icon: 'fab fa-css3-alt',
+      color: '#264de4',
+      level: 90,
+    },
+    { name: 'Next.js', icon: 'fas fa-cubes', color: '#000000', level: 80 },
   ]
 
   return (
     <section id="skills" className="py-20 px-6 md:px-12 z-10 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 fade-up">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent"> Core Skills </h2>
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
+            {' '}
+            Core Skills{' '}
+          </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
           {skills.map((skill, i) => (
-            <div key={i} className="glass p-6 text-center border border-white/20 rounded-2xl hover-scale">
-              <i className={`${skill.icon} text-5xl mb-4`} style={{ color: skill.color, textShadow: `0 0 6px ${skill.color}` }}></i>
+            <div
+              key={i}
+              className="glass p-6 text-center border border-white/20 rounded-2xl hover-scale"
+            >
+              <i
+                className={`${skill.icon} text-5xl mb-4`}
+                style={{
+                  color: skill.color,
+                  textShadow: `0 0 6px ${skill.color}`,
+                }}
+              ></i>
               <h3 className="text-xl font-bold text-white">{skill.name}</h3>
               <div className="mt-3 w-full bg-white/10 rounded-full h-2">
-                <div className="bg-gradient-to-r from-cyan-400 to-purple-500 h-2 rounded-full" style={{ width: `${skill.level}%` }}></div>
+                <div
+                  className="bg-gradient-to-r from-cyan-400 to-purple-500 h-2 rounded-full"
+                  style={{ width: `${skill.level}%` }}
+                ></div>
               </div>
             </div>
           ))}
@@ -270,32 +344,132 @@ const SkillsSection = () => {
 
 const ProjectsSection = () => {
   const projects = [
-    { title: "Neo Genesis AI", desc: "Platform AI dengan 3D visual & realtime", tech: "React Three Fiber", icon: "fas fa-brain" },
-    { title: "Futuristic Dashboard", desc: "Dashboard analitik glassmorphism", tech: "Tailwind + Chart.js", icon: "fas fa-chart-line" },
-    { title: "Motion Portfolio X", desc: "Scroll-trigger animasi cinematic", tech: "Framer Motion", icon: "fas fa-film" },
-    { title: "Ethereal Commerce", desc: "E-commerce efek holografik", tech: "React + Node.js", icon: "fas fa-store" }
+    {
+      title: 'Ronco Film',
+      desc: 'A modern full-stack movie platform featuring interactive 3D experiences, dynamic content management, and optimized performance for a smooth user journey.',
+      tech: 'React, React Three Fiber, Tailwind CSS, Node.js, Express.js',
+      image: '/svg/projectkan1.jpeg',
+      link: 'https://uas-react-galang.vercel.app',
+    },
+    {
+      title: 'Ronco Musical',
+      desc: 'A modern music web application that allows users to explore albums, manage playlists, and enjoy a responsive browsing experience with a clean and interactive interface.',
+      tech: 'HTML5, CSS3, JavaScript',
+      image: '/svg/projectkan2.jpeg',
+      link: 'https://projectkan-html-ronco-musical.vercel.app/',
+    },
+
+    {
+      title: 'LocalMart',
+      desc: 'A scalable full-stack marketplace application featuring user authentication, product catalog management, shopping functionality, and RESTful API integration with PostgreSQL, delivering a responsive and seamless user experience.',
+      tech: 'React, JavaScript, Tailwind CSS, Node.js, Express.js, PostgreSQL, DBeaver, REST API, Postman',
+      image: '/svg/projectkan3.jpeg',
+      frontend: 'https://github.com/galangmaulana15/localmart-frontend',
+      backend: 'https://github.com/galangmaulana15/localmart-backend',
+    },
+    {
+      title: 'Ethereal Commerce',
+      desc: 'An immersive e-commerce concept wrapped in a futuristic holographic aesthetic — glassmorphism panels, neon gradients, and cinematic motion bring a dreamlike, sci-fi shopping experience to life.',
+      tech: 'React, Tailwind CSS, JavaScript, Node.js, Express.js',
+      image: '/svg/projectkan4.jpeg',
+      link: 'https://github.com/galangmaulana15/ethereal-commerce',
+    },
   ]
 
   return (
-    <section id="projects" className="py-24 px-6 md:px-12 bg-black/30 z-10 relative">
+    <section
+      id="projects"
+      className="py-24 px-6 md:px-12 bg-black/30 z-10 relative"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14 fade-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-500"> Featured Projects </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-500">
+            Featured Projects
+          </h2>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((proj, idx) => (
-            <div key={idx} className="project-hover rounded-2xl overflow-hidden bg-gray-900/50 backdrop-blur-sm border border-gray-700 hover:border-cyan-400 transition-all fade-up">
-              <div className="h-56 bg-gradient-to-br from-purple-900/60 to-cyan-900/60 flex items-center justify-center text-4xl">
-                <i className={`${proj.icon} text-cyan-300 text-5xl`}></i>
-                <span className="ml-3 text-white text-xl">{proj.title}</span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-white">{proj.title}</h3>
-                <p className="text-gray-300 mt-2">{proj.desc}</p>
-                <div className="mt-4"><span className="text-xs text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full">{proj.tech}</span></div>
+          {projects.map((proj, idx) => {
+            const link = proj.link || proj.frontend || proj.backend
+            return (
+            <div
+              key={idx}
+              className="project-hover rounded-2xl overflow-hidden bg-gray-900/50 backdrop-blur-sm border border-gray-700 hover:border-cyan-400 transition-all fade-up flex flex-col"
+            >
+              {/* 2. Bungkus Image dengan tag <a> agar bisa diklik */}
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block relative group overflow-hidden h-56"
+              >
+                <img
+                  src={proj.image}
+                  alt={proj.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                {/* Efek overlay saat kursor diarahkan ke gambar */}
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                  <i className="fas fa-external-link-alt text-cyan-300 text-4xl transform scale-50 group-hover:scale-100 transition-transform duration-300"></i>
+                </div>
+              </a>
+
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold text-white hover:text-cyan-400 transition-colors">
+                    {/* Judul juga bisa diklik */}
+                    <a
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {proj.title}
+                    </a>
+                  </h3>
+                  <p className="text-gray-300 mt-2">{proj.desc}</p>
+                </div>
+
+                <div className="mt-6 flex items-center justify-between gap-2 flex-wrap">
+                  <span className="text-xs text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
+                    {proj.tech}
+                  </span>
+
+                  {proj.frontend && proj.backend ? (
+                    <div className="flex gap-2">
+                      <a
+                        href={proj.frontend}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-cyan-300 bg-cyan-500/10 px-3 py-1.5 rounded-full border border-cyan-500/20 hover:bg-cyan-500/20 transition-colors"
+                      >
+                        <i className="fab fa-github mr-1"></i> Frontend
+                      </a>
+                      <a
+                        href={proj.backend}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-purple-300 bg-purple-500/10 px-3 py-1.5 rounded-full border border-purple-500/20 hover:bg-purple-500/20 transition-colors"
+                      >
+                        <i className="fab fa-github mr-1"></i> Backend
+                      </a>
+                    </div>
+                  ) : (
+                    <a
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-cyan-300 transition-colors"
+                      title="View Project"
+                    >
+                      <i
+                        className={`text-xl ${link.includes('github.com') ? 'fab fa-github' : 'fas fa-globe'}`}
+                      ></i>
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
@@ -306,12 +480,41 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-24 px-6 md:px-12 z-10 relative">
       <div className="max-w-5xl mx-auto glass p-8 md:p-12 text-center fade-up">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Connect With <span className="text-cyan-400">Me</span></h2>
-        <p className="text-gray-300 mb-10">Mari berkolaborasi untuk proyek visioner masa depan</p>
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          Connect With <span className="text-cyan-400">Me</span>
+        </h2>
+        <p className="text-gray-300 mb-10">
+          Mari berkolaborasi untuk proyek visioner masa depan
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
-          <a href="galangponco123@gmail.com" className="flex flex-col items-center p-5 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:border-cyan-400 transition"><i className="fas fa-envelope text-3xl text-cyan-400 mb-2"></i><span>Email</span><span className="text-xs text-cyan-300">galangponco123@gmail.com</span></a>
-          <a href="https://wa.me/6282170714989" target="_blank" className="flex flex-col items-center p-5 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:border-cyan-400 transition"><i className="fab fa-whatsapp text-3xl text-green-400 mb-2"></i><span>WhatsApp</span><span className="text-xs">+62 821 7071 4989</span></a>
-          <a href="https://github.com/galangmaulana15" target="_blank" className="flex flex-col items-center p-5 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:border-cyan-400 transition"><i className="fab fa-github text-3xl text-gray-300 mb-2"></i><span>GitHub</span><span className="text-xs">/galangmaulana15</span></a>
+          <a
+            href="mailto:galangponco123@gmail.com"
+            className="flex flex-col items-center p-5 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:border-cyan-400 transition"
+          >
+            <i className="fas fa-envelope text-3xl text-cyan-400 mb-2"></i>
+            <span>Email</span>
+            <span className="text-xs text-cyan-300">
+              galangponco123@gmail.com
+            </span>
+          </a>
+          <a
+            href="https://wa.me/6282170714989"
+            target="_blank"
+            className="flex flex-col items-center p-5 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:border-cyan-400 transition"
+          >
+            <i className="fab fa-whatsapp text-3xl text-green-400 mb-2"></i>
+            <span>WhatsApp</span>
+            <span className="text-xs">+62 821 7071 4989</span>
+          </a>
+          <a
+            href="https://github.com/galangmaulana15"
+            target="_blank"
+            className="flex flex-col items-center p-5 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:border-cyan-400 transition"
+          >
+            <i className="fab fa-github text-3xl text-gray-300 mb-2"></i>
+            <span>GitHub</span>
+            <span className="text-xs">/galangmaulana15</span>
+          </a>
         </div>
       </div>
     </section>
@@ -323,15 +526,18 @@ const App = () => {
 
   useEffect(() => {
     initStarsCanvas()
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible')
-          observer.unobserve(entry.target)
-        }
-      })
-    }, { threshold: 0.2 })
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el))
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.2 },
+    )
+    document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el))
     return () => observer.disconnect()
   }, [])
 
@@ -341,15 +547,16 @@ const App = () => {
       <div className="relative z-10">
         <Navbar />
         <IntroSection />
-        <HeroSection />
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />
-        <footer className="py-8 text-center text-white/40 text-sm border-t border-white/10">© 2026 | Futuristic Portfolio | React + CSS Animations</footer>
+        <footer className="py-8 text-center text-white/40 text-sm border-t border-white/10">
+          © 2026 | Futuristic Portfolio | React + CSS Animations
+        </footer>
       </div>
     </>
   )
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />)
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)
