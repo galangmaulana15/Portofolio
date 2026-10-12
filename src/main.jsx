@@ -499,15 +499,6 @@ const ResumeSection = () => {
       shadow: 'shadow-purple-500/30',
       tag: 'Fullstack',
     },
-    {
-      title: 'CV ATS Friendly',
-      desc: 'Optimized resume format designed to pass Applicant Tracking Systems with high compatibility.',
-      file: '/cv/ats-cv.pdf',
-      icon: 'fas fa-robot',
-      gradient: 'from-emerald-400 to-teal-500',
-      shadow: 'shadow-emerald-500/30',
-      tag: 'ATS',
-    },
   ]
 
   return (
@@ -519,7 +510,7 @@ const ResumeSection = () => {
           </h2>
           <p className="text-gray-400 mt-4 text-lg">Download my professional resume</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {resumes.map((cv, i) => (
             <div
               key={i}
