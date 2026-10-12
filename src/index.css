@@ -88,3 +88,40 @@ body {
   transform: scale(1.05);
   box-shadow: 0 0 15px cyan;
 }
+.cert-card {
+  transition: all 0.4s ease;
+}
+.cert-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: #0ff;
+  box-shadow: 0 12px 30px -8px rgba(0, 255, 255, 0.4);
+}
+.cert-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: modalFadeIn 0.3s ease;
+}
+.cert-modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  width: 100%;
+  animation: modalSlideUp 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}

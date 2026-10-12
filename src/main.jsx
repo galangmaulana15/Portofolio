@@ -303,6 +303,9 @@ const SkillsSection = () => {
       level: 90,
     },
     { name: 'Next.js', icon: 'fas fa-cubes', color: '#000000', level: 80 },
+    { name: 'Java', icon: 'fab fa-java', color: '#f89820', level: 90 },
+    { name: 'Docker', icon: 'fab fa-docker', color: '#2496ed', level: 85 },
+    { name: 'Microsoft Azure', icon: 'fab fa-microsoft', color: '#0078d4', level: 85 },
   ]
 
   return (
@@ -476,6 +479,164 @@ const ProjectsSection = () => {
   )
 }
 
+const ResumeSection = () => {
+  const resumes = [
+    {
+      title: 'Frontend Developer',
+      desc: 'Specialized in building modern, responsive, and interactive user interfaces with React & Tailwind CSS.',
+      file: '/cv/frontend-cv.pdf',
+      icon: 'fas fa-palette',
+      gradient: 'from-cyan-400 to-blue-500',
+      shadow: 'shadow-cyan-500/30',
+      tag: 'Frontend',
+    },
+    {
+      title: 'Fullstack Web Developer',
+      desc: 'End-to-end web development expertise from database design to pixel-perfect frontends.',
+      file: '/cv/fullstack-cv.pdf',
+      icon: 'fas fa-layer-group',
+      gradient: 'from-purple-400 to-pink-500',
+      shadow: 'shadow-purple-500/30',
+      tag: 'Fullstack',
+    },
+    {
+      title: 'CV ATS Friendly',
+      desc: 'Optimized resume format designed to pass Applicant Tracking Systems with high compatibility.',
+      file: '/cv/ats-cv.pdf',
+      icon: 'fas fa-robot',
+      gradient: 'from-emerald-400 to-teal-500',
+      shadow: 'shadow-emerald-500/30',
+      tag: 'ATS',
+    },
+  ]
+
+  return (
+    <section id="resume" className="py-24 px-6 md:px-12 z-10 relative">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-14 fade-up">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+            My Resume
+          </h2>
+          <p className="text-gray-400 mt-4 text-lg">Download my professional resume</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {resumes.map((cv, i) => (
+            <div
+              key={i}
+              className="glass p-8 text-center hover-scale fade-up flex flex-col items-center gap-5"
+            >
+              <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${cv.gradient} flex items-center justify-center shadow-lg ${cv.shadow}`}>
+                <i className={`${cv.icon} text-3xl text-white`}></i>
+              </div>
+              <span className={`text-xs font-bold px-4 py-1 rounded-full bg-gradient-to-r ${cv.gradient} text-white`}>
+                {cv.tag}
+              </span>
+              <h3 className="text-xl font-bold text-white">{cv.title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">{cv.desc}</p>
+              <div className="flex gap-3 mt-auto pt-4">
+                <a
+                  href={cv.file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2.5 rounded-full border border-cyan-400 text-cyan-300 text-sm font-medium hover:bg-cyan-500/20 transition flex items-center gap-2"
+                >
+                  <i className="fas fa-eye"></i> View
+                </a>
+                <a
+                  href={cv.file}
+                  download
+                  className="px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-medium shadow-lg shadow-cyan-500/30 hover:scale-105 transition flex items-center gap-2"
+                >
+                  <i className="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+const CertificateModal = ({ cert, onClose }) => {
+  useEffect(() => {
+    const handleKey = (e) => { if (e.key === 'Escape') onClose() }
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', handleKey)
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', handleKey)
+    }
+  }, [onClose])
+
+  if (!cert) return null
+
+  return (
+    <div className="cert-modal-overlay" onClick={onClose}>
+      <div className="cert-modal-content" onClick={(e) => e.stopPropagation()}>
+        <button onClick={onClose} className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 border border-white/20 text-white text-xl hover:bg-red-500/80 hover:border-red-400 transition flex items-center justify-center z-10">
+          <i className="fas fa-times"></i>
+        </button>
+        <img src={cert.image} alt={cert.title} className="max-w-full max-h-[85vh] rounded-xl shadow-2xl" />
+        <h3 className="text-white text-xl font-bold mt-4 text-center">{cert.title}</h3>
+      </div>
+    </div>
+  )
+}
+
+const CertificatesSection = () => {
+  const [selected, setSelected] = useState(null)
+
+  const certificates = [
+    { title: 'Fullstack Web Developer', image: '/certificates/fullstack-web-developer.jpeg' },
+    { title: 'React Lanjutan', image: '/certificates/react-lanjutan.jpeg' },
+    { title: 'Fundamental React', image: '/certificates/fundamental-react.jpeg' },
+    { title: 'HTML, CSS, JavaScript', image: '/certificates/html-css-js.jpeg' },
+    { title: 'Git & GitHub', image: '/certificates/git-github.jpeg' },
+    { title: 'Database', image: '/certificates/database.jpeg' },
+    { title: 'Data Structure', image: '/certificates/data-structure.jpeg' },
+    { title: 'Bahasa C', image: '/certificates/bahasa-c.jpeg' },
+  ]
+
+  return (
+    <section id="certificates" className="py-24 px-6 md:px-12 bg-black/30 z-10 relative">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-14 fade-up">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-400 via-orange-400 to-pink-500 bg-clip-text text-transparent">
+            Certificates
+          </h2>
+          <p className="text-gray-400 mt-4 text-lg">Professional training & certifications</p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {certificates.map((cert, i) => (
+            <div
+              key={i}
+              className="cert-card glass rounded-2xl overflow-hidden cursor-pointer fade-up"
+              onClick={() => setSelected(cert)}
+            >
+              <div className="relative group overflow-hidden">
+                <img
+                  src={cert.image}
+                  alt={cert.title}
+                  className="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2 backdrop-blur-[2px]">
+                  <i className="fas fa-search-plus text-cyan-300 text-3xl transform scale-50 group-hover:scale-100 transition-transform duration-300"></i>
+                  <span className="text-cyan-300 text-sm font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">View Certificate</span>
+                </div>
+              </div>
+              <div className="p-4">
+                <h3 className="text-white font-bold text-sm text-center">{cert.title}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {selected && <CertificateModal cert={selected} onClose={() => setSelected(null)} />}
+    </section>
+  )
+}
+
 const ContactSection = () => {
   return (
     <section id="contact" className="py-24 px-6 md:px-12 z-10 relative">
@@ -550,6 +711,8 @@ const App = () => {
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
+        <ResumeSection />
+        <CertificatesSection />
         <ContactSection />
         <footer className="py-8 text-center text-white/40 text-sm border-t border-white/10">
           © 2026 | Futuristic Portfolio | React + CSS Animations
